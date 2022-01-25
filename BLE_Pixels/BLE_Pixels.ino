@@ -195,14 +195,14 @@ void loop() {
     midi_chan = (mi[0] & 0x0f) + 1;
     midi_cmd = mi[0] & 0xf0;
 
-    if (midi_cmd == 0x80) {
+    if (midi_cmd == 0x90) {
       pix = (mi[1] - 30);
       if (pix > 143) pix = 1;
       pixels.setPixelColor(pix, pixels.Color(60,0,0));
       pixels.show(); 
     }
 
-    if (midi_cmd == 0x90) {
+    if (midi_cmd == 0x80) {
       pix = (mi[1] - 30);
       if (pix > 143) pix = 1;
       pixels.setPixelColor(pix, pixels.Color(0,0,0));
