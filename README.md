@@ -3,8 +3,10 @@ M5Stick driving a Neopixel strip in response to MIDI commands
 
 The story so far...   
 
-Created BLE_MIDI_Device to make M5Stick C appear as MIDI device over BLE, just to see what can connect to it.  
-BLE_MIDI_Device2 has better MIDI processing (ie it works, rather than the flaky MIDI in the original BLE_MIDI_Device).   
+- BLE_MIDI_Device will make M5Stick C appear as MIDI device over BLE, just to see what can connect to it.  
+- BLE_MIDI_Device2 has better MIDI processing (ie it works, rather than the flaky MIDI in the original BLE_MIDI_Device).   
+- Pixels will light a 144 led 1m strip of WS2812B Neopixels different colours (driven by 3.3v on the M5Stick - seems to work on my strip).   
+
 
 Dependencies (tested with):   
 
