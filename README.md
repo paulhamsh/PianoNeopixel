@@ -11,4 +11,5 @@ The story so far...
 Dependencies (tested with):   
 
 NimBLE library v1.3.6
+Adafruit NeoPixel v1.10.0
 
