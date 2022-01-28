@@ -12,6 +12,9 @@
 
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
+#define NOTE_OFFSET 30
+#define NOTE_MULT 2
+
 ////////////////////////////////////////////
 // BLE
 ////////////////////////////////////////////
@@ -196,16 +199,18 @@ void loop() {
     midi_cmd = mi[0] & 0xf0;
 
     if (midi_cmd == 0x90) {
-      pix = (mi[1] - 30);
+      pix = (mi[1] - NOTE_OFFSET) * NOTE_MULT;
       if (pix > 143) pix = 1;
       pixels.setPixelColor(pix, pixels.Color(60,0,0));
+      pixels.setPixelColor(pix+1, pixels.Color(60,0,0));
       pixels.show(); 
     }
 
     if (midi_cmd == 0x80) {
-      pix = (mi[1] - 30);
+      pix = (mi[1] - NOTE_OFFSET) * NOTE_MULT;
       if (pix > 143) pix = 1;
       pixels.setPixelColor(pix, pixels.Color(0,0,0));
+      pixels.setPixelColor(pix+1, pixels.Color(0,0,0));
       pixels.show(); 
     }    
 
